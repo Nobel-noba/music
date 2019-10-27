@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
       <h1>
         Zemare
         <small>ordering table</small>
-          <small><a href="#">insert</a></small>
+          <small><a href="pages/insert/insert.php">insert</a></small>
           <div style="float: right">
               <audio controls >
                   <source src="horse.ogg" type="audio/ogg">
@@ -87,8 +88,13 @@
                             echo "<td>".$row["style"]."</td>";
                             echo "<td>".$row["scale"]."</td>";
                             echo "<td>".$row["transpose"]."</td>";
-                            echo "<td><button class='btn btn-sm btn-warning' data-toggle='' value='play'><a>play</a></button></button></td></tr>";
-                        }
+                            echo "<td>
+                                      <button class='btn btn-sm btn-warning' data-toggle='' value='play'><a>play</a></button>
+                                      <form action='pages/edit/edit.php'>
+                                      <input type='submit' class='btn btn-sm btn-info' data-toggle='' value=''><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></input>
+                                        </form>
+                                   </td></tr>
+                                      ";}
                     }?>
                 </tbody>
                 <tfoot>
@@ -152,7 +158,8 @@
       'info'        : true,
       'autoWidth'   : false
     })
-  })
+  });
+
 </script>
 </body>
 </html>
