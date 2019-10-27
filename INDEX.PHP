@@ -94,6 +94,7 @@
                             echo "<td>
                                       <button class='btn btn-sm btn-warning' onclick='locator()'>play</a></button>
                                       <button class='btn btn-info'><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></button>
+                                      <button class='btn btn-danger'><a href='pages/delete/delete.php?id=".$row['id']."'>delete</a></button>
                                    </td></tr>
                                       ";}
                     }?>
