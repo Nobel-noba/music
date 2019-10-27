@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +44,7 @@
           <div style="float: right">
               <audio controls >
                   <source src="horse.ogg" type="audio/ogg">
-                  <source src="" type="audio/mp3">
+                  <source id="source" src="t.mp3" type="audio/mp3">
                   Your browser does not support the audio element.
               </audio>
           </div>
@@ -75,6 +77,7 @@
                 </tr>
                 </thead>
                 <tbody>
+                <p id="a"></p>
                 <?php
                     $sql = "SELECT id, name, sname,style,scale,transpose FROM music";
                     $result = $con->query($sql);
@@ -89,10 +92,8 @@
                             echo "<td>".$row["scale"]."</td>";
                             echo "<td>".$row["transpose"]."</td>";
                             echo "<td>
-                                      <button class='btn btn-sm btn-warning' data-toggle='' value='play'><a>play</a></button>
-                                      <form action='pages/edit/edit.php'>
-                                      <input type='submit' class='btn btn-sm btn-info' data-toggle='' value=''><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></input>
-                                        </form>
+                                      <button class='btn btn-sm btn-warning' onclick='locator()'>play</a></button>
+                                      <button class='btn btn-info'><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></button>
                                    </td></tr>
                                       ";}
                     }?>
@@ -159,7 +160,15 @@
       'autoWidth'   : false
     })
   });
-
 </script>
+    <script>
+        function locator() {
+            $('#source').attr('src','me'+'.mp3');
+            var attr=$('#source').attr('src');
+            $('#a').text(attr);
+
+
+        }
+    </script>
 </body>
 </html>
