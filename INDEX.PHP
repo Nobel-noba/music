@@ -73,13 +73,14 @@
                   <th>ምት ስታይል(STYLE)</th>
                   <th>ስኬል(SCALE)</th>
                   <th>ዝማሬው ያለበት ትራንስፖዝ(TERANSPOSE)</th>
+                  <th>ዝማሬው ያለበት ሀሳብ(Idea)</th>
                   <th>መሳሪያዎች(Tools)</th>
                 </tr>
                 </thead>
                 <tbody>
                 <p id="a"></p>
                 <?php
-                    $sql = "SELECT id, name, sname,style,scale,transpose FROM music";
+                    $sql = "SELECT id, name, sname,style,scale,transpose,idea FROM music";
                     $result = $con->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -91,6 +92,7 @@
                             echo "<td>".$row["style"]."</td>";
                             echo "<td>".$row["scale"]."</td>";
                             echo "<td>".$row["transpose"]."</td>";
+                            echo "<td>".$row["idea"]."</td>";
                             echo "<td>
                                       <button class='btn btn-sm btn-warning' onclick='locator()'>play</a></button>
                                       <button class='btn btn-info'><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></button>
@@ -107,6 +109,7 @@
                   <th>ምት ስታይል(STYLE)</th>
                   <th>ስኬል(SCALE)</th>
                   <th>ዝማሬው ያለበት ትራንስፖዝ(TERANSPOSE)</th>
+                  <th>ዝማሬው ያለበት ሀሳብ(Idea)</th>
                     <th>መሳሪያዎች(Tools)</th>
                 </tr>
                 </tfoot>

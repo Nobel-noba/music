@@ -9,6 +9,7 @@ $sname=$row['SNAME'];
 $style=$row["STYLE"];
 $scale=$row["SCALE"];
 $transpose=$row["TRANSPOSE"];
+$IDEA=$row["IDEA"];
 ?>
 
 <!doctype html>
@@ -26,7 +27,8 @@ $transpose=$row["TRANSPOSE"];
     sname = <input type="text" name="sname" value="<?php echo $sname?>"><br>
     style = <input type="text" name="style" value="<?php echo $style?>"><br>
     scale = <input type="text" name="scale" value="<?php echo $scale?>"><br>
-    transpose = <input type="text" name="transpose" value="<?php echo $transpose?>"> <br>
+    transpose = <input  type="number" name="transpose" value="<?php echo $transpose?>"> <br>
+    idea = <input type="text" name="idea" value="<?php echo $IDEA?>"> <br>
     <input type="submit" value="submit" name="submit">
 </form>
 </body>

@@ -13,7 +13,8 @@
     sname = <input type="text" name="sname"><br>
     style = <input type="text" name="style"><br>
     scale = <input type="text" name="scale"><br>
-    transpose = <input type="text" name="transpose"> <br>
+    transpose = <input type="number" name="transpose"> <br>
+    idea = <input type="text" name="idea"> <br>
     <input type="submit" value="submit" name="submit">
 </form>
 </body>
