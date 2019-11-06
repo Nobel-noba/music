@@ -17,5 +17,5 @@ else
     echo "not inserted";
 }
 $con->close();
-
+header('Location:insert.php');
 ?>

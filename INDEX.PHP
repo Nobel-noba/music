@@ -63,7 +63,7 @@
               <h3 class="box-title">ORDERING TABLE</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+            <div class="box-body" style="overflow-x:auto;">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
