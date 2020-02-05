@@ -11,28 +11,12 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
   <!-- Google Font -->
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <!-- Content Header (Page header) -->
@@ -40,13 +24,8 @@
       <h1>
         Zemare
         <small>ordering table</small>
-          <small><a href="pages/insert/insert.php">insert</a></small>
-          <div style="float: right">
-              <audio controls >
-                  <source src="horse.ogg" type="audio/ogg">
-                  <source id="source" src="t.mp3" type="audio/mp3">
-                  Your browser does not support the audio element.
-              </audio>
+<!--          <small><a href="pages/insert/insert.php">insert</a></small>-->
+          <div class="navbar navbar-fixed-top" style="float: right" id="player">
           </div>
       </h1>
     </section>
@@ -61,7 +40,9 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">ORDERING TABLE</h3>
+                <h4 style="float: right">just click in any of the columns and it will sort it accordingly</h4>
             </div>
+
             <!-- /.box-header -->
             <div class="box-body" style="overflow-x:auto;">
               <table id="example2" class="table table-bordered table-hover">
@@ -78,7 +59,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                <p id="a"></p>
                 <?php
                     $sql = "SELECT id, name, sname,style,scale,transpose,idea FROM music";
                     $result = $con->query($sql);
@@ -94,7 +74,7 @@
                             echo "<td>".$row["transpose"]."</td>";
                             echo "<td>".$row["idea"]."</td>";
                             echo "<td>
-                                      <button class='btn btn-sm btn-warning' onclick='locator()'>play</a></button>
+                                      <button class='btn btn-sm btn-warning' id='id".$row['id']."' onclick='locator(id)'>play</a></button>
                                       <button class='btn btn-info'><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></button>
                                       <button class='btn btn-danger'><a href='pages/delete/delete.php?id=".$row['id']."'>delete</a></button>
                                    </td></tr>
@@ -123,7 +103,6 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -133,11 +112,10 @@
     reserved.
   </footer>
   <div class="control-sidebar-bg"></div>
-</div>
 <!-- ./wrapper -->
-
 <!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/changeplay.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
@@ -145,12 +123,6 @@
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 <!-- page script -->
 <script>
   $(function () {
@@ -166,13 +138,6 @@
   });
 </script>
     <script>
-        function locator() {
-            $('#source').attr('src','me'+'.mp3');
-            var attr=$('#source').attr('src');
-            $('#a').text(attr);
-
-
-        }
     </script>
 </body>
 </html>
