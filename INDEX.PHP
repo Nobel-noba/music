@@ -24,7 +24,6 @@
       <h1>
         Zemare
         <small>ordering table</small>
-<!--          <small><a href="pages/insert/insert.php">insert</a></small>-->
           <div class="navbar navbar-fixed-top" style="float: right" id="player">
           </div>
       </h1>
@@ -74,9 +73,7 @@
                             echo "<td>".$row["transpose"]."</td>";
                             echo "<td>".$row["idea"]."</td>";
                             echo "<td>
-                                      <button class='btn btn-sm btn-warning' id='id".$row['id']."' onclick='locator(id)'>play</a></button>
-                                      <button class='btn btn-info'><a href='pages/edit/edit.php?id=".$row['id']."'>edit</a></button>
-                                      <button class='btn btn-danger'><a href='pages/delete/delete.php?id=".$row['id']."'>delete</a></button>
+                                      <button id='".$row['id']."' class='btn btn-sm btn-warning' onclick='locator(id)'><i class='glyphicon glyphicon-play'></i></button>
                                    </td></tr>
                                       ";}
                     }?>
@@ -108,7 +105,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0(beta)
     </div>
-    <strong>Copyright &copy; 2019-2020 <a href="https://adminlte.io">Noba</a>.</strong> All rights
+    <strong>Copyright &copy; 2019-2020 <a href="#">NOBEL MITIKU</a>.</strong> All rights
     reserved.
   </footer>
   <div class="control-sidebar-bg"></div>
@@ -121,8 +118,6 @@
 <!-- DataTables -->
 <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- page script -->
 <script>
   $(function () {
